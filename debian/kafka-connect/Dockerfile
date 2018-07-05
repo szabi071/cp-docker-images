@@ -37,3 +37,6 @@ RUN echo "===> Installing JDBC, Elasticsearch and Hadoop connectors ..." \
         confluent-kafka-connect-jms=${CONFLUENT_VERSION}${CONFLUENT_PLATFORM_LABEL}-${CONFLUENT_DEB_VERSION} \
     && echo "===> Cleaning up ..."  \
     && apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/*
+
+RUN curl -SL http://repo1.maven.org/maven2/com/github/jcustenborder/kafka/connect/kafka-connect-cdc-mssql/0.0.1.50/kafka-connect-cdc-mssql-0.0.1.50.tar.gz \
+    | tar -xvz
